@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/image-cropper/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circular Image Cropper</title>
+  
+  <script type="module" crossorigin src="/image-cropper/assets/index-51444803.js"></script>
+  <link rel="stylesheet" href="/image-cropper/assets/index-704b3e2d.css">
+</head>
+
+<body>
+  <main class="app">
+    <h1>Circular Image Cropper</h1>
+    <div class="file-field">
+      <label for="input-img">To start, insert an image:</label>
+      <input type="file" id="input-img">
+      <p class="hidden" id="original-width">Original Width: 0</p>
+      <p class="hidden" id="original-height">Original Height: 0</p>
+    </div>
+    <img src="" alt="Current Image" id="current-img" class="hidden">
+    <div class="crop-controls hidden" id="crop-controls">
+      <div class="inputs-wrap">
+        <div class="inputs-field">
+          <label for="x-offset">X Offset</label>
+          <input id="x-offset" type="number" value="0">
+        </div>
+        <div class="inputs-field">
+          <label for="y-offset">Y Offset</label>
+          <input id="y-offset" type="number" value="0">
+        </div>
+        <div class="inputs-field">
+          <label for="radius">Radius</label>
+          <input id="radius" type="number" value="200">
+        </div>
+      </div>
+      <div class="btn-box">
+        <button class="btn" id="crop">Crop</button>
+        <button class="btn" id="download">Download</button>
+      </div>
+      <div class="dims-box">
+        <p class="dimension" id="width">Width: 0</p>
+        <p class="dimension" id="height">Height: 0</p>
+      </div>
+    </div>
+  </main>
+  
+</body>
+
+</html>

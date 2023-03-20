@@ -3,6 +3,7 @@ import cropImage from "./modules/cropImage";
 (() => {
   let originalImgSrc = "";
   let imgSrc = "";
+  let originalTitle = "";
 
   const inputImage = document.querySelector<HTMLInputElement>("#input-img");
   const currentImage = document.querySelector<HTMLImageElement>("#current-img");
@@ -25,6 +26,7 @@ import cropImage from "./modules/cropImage";
       return;
     }
 
+    originalTitle = file.name;
     const reader = new FileReader();
 
     reader.addEventListener("load", (event) => {
@@ -91,7 +93,14 @@ import cropImage from "./modules/cropImage";
 
     const link = document.createElement("a");
     link.href = imgSrc;
-    link.download = "cropped-image.png";
+
+    const titleStripped = originalTitle.substring(
+      0,
+      originalTitle.lastIndexOf(".")
+    );
+    const newTitle = titleStripped || "image";
+    link.download = `${newTitle}-cropped.png`;
+
     document.body.appendChild(link);
     link.click();
   });
